@@ -1,0 +1,32 @@
+div {
+    float: left;
+  }
+#droppable {
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    border:3px solid;
+    //float: left;
+}
+
+.draggable-widget{
+    width: 75px;
+    height: 25px;
+    cursor: move;
+    border: dotted 1px black;
+    padding: 0.5% 0.5% 0.5% 0.5% ;
+    overflow: hidden;
+}
+
+.widget{
+    width: 95%;
+    height: 95%;
+}
+
+input {
+    width: 95%;
+    height: 95%;
+}

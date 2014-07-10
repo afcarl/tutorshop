@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="{% static 'tutorauthor/draggable.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'tutorauthor/style.css' %}">
+
+<a href="/">Back</a><br/>
+
+<h2>Widget Palette</h2>
+<div class="draggable-widget"><span class="widget">Label</span></div>
+<div class="draggable-widget"><input class="widget" disabled></div>
+<div class="draggable-widget"><button class="widget" disabled>Button</button></div>
+<br/>
+<br/>
+<hr/>
+
+<div id="droppable" class="ui-widget-content">
+{% for widget in widgets %}
+<div class="widget existing-widget draggable-widget" widget-id="{{widget.pk }}" style="position: absolute; left:{{ widget.left }}; top:{{ widget.top }}; width:{{widget.width}}; height:{{widget.height}}">
+    {{ widget.value|safe }}
+</div>
+{% endfor %}
+
+</div>
+
